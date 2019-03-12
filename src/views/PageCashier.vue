@@ -47,11 +47,11 @@ export default {
 		width: 100%;
 
 		#cashierHeader{
-			height: 30vh;
+			height: 25vh;
 			background: $v-red-linear;
 
 			#countDown{
-				padding:15px;
+				padding: 20px 15px;
 
 				label{
 					color: $v-white;

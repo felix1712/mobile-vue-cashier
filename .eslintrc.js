@@ -10,6 +10,13 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    indent: [2, 'tab'],
+    'no-tabs': 0,
+    'no-useless-escape': 0,
+    'no-param-reassign': 0,
+    "no-underscore-dangle": 0,
+    "no-restricted-globals": 0,
+    // "semi": [2, "never"], this rules is for remove semicolon on eslint
   },
   parserOptions: {
     parser: 'babel-eslint',

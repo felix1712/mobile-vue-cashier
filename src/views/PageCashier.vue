@@ -2,32 +2,32 @@
 	<div
 		id="pageCashier"
 		v-responsive="{
-	    tiny: el => el.width < 400,
-	    small: el => el.width < 800 && el.width > 300,
-	    large: el => el.width > 800,
-  	}">
+			tiny: el => el.width < 400,
+			small: el => el.width < 800 && el.width > 300,
+			large: el => el.width > 800,
+		}">
 			<div id="cashierHeader">
 				<div id="baseCountDown">
 					<label>Batas Pembayaran</label>
 					<div class="countdown-frame card-frame col-12">
 						<div class="block">
-				      <p class="digit">00</p>
-				      <p class="text">Hours</p>
-				    </div>
-				    <div class="divid">
-				    	<span>:</span>
-				    </div>
-				    <div class="block">
-				      <p class="digit">15</p>
-				      <p class="text">Minutes</p>
-				    </div>
-				    <div class="divid">
-				    	<span>:</span>
-				    </div>
-				    <div class="block">
-				      <p class="digit">09</p>
-				      <p class="text">Seconds</p>
-				    </div>
+							<p class="digit">00</p>
+							<p class="text">Hours</p>
+						</div>
+						<div class="divid">
+							<span>:</span>
+						</div>
+						<div class="block">
+							<p class="digit">15</p>
+							<p class="text">Minutes</p>
+						</div>
+						<div class="divid">
+							<span>:</span>
+						</div>
+						<div class="block">
+							<p class="digit">09</p>
+							<p class="text">Seconds</p>
+						</div>
 					</div>
 				</div>
 				<div id="baseOrderDetails">
@@ -56,7 +56,7 @@
 							</div>
 							<div class="col-6">
 								<a>
-									<span>Lihat Detail</span> 
+									<span>Lihat Detail</span>
 								</a>
 							</div>
 						</div>
@@ -103,28 +103,28 @@ export default {
 					border: 1px solid $v-red-border;
 					box-shadow: 2px 2px 2px 0 rgba(232, 232, 232, 0.1);
 
-				  .block {
-				    display: flex;
-				    flex-direction: column;
-				    margin: 0 10%;
+					.block {
+						display: flex;
+						flex-direction: column;
+						margin: 0 10%;
 
-				    .digit{
-				    	text-align:center;
-				    	font-size: 1.6rem;
-				    }
-				    .text{
-				    	font-size: 0.7rem;
-				    }
+						.digit{
+							text-align:center;
+							font-size: 1.6rem;
+						}
+						.text{
+							font-size: 0.7rem;
+						}
 
-				    p{
-				    	margin: 0;
-				    }
-				  }
+						p{
+							margin: 0;
+						}
+					}
 
-				  .divid{
-				  	font-size: 2rem;
-				  	color: $v-black;
-				  }
+					.divid{
+						font-size: 2rem;
+						color: $v-black;
+					}
 				}
 			}
 
@@ -197,7 +197,7 @@ export default {
 							}
 						}
 					}
-				}	
+				}
 			}
 		}
 	}

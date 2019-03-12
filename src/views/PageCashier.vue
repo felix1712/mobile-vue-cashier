@@ -7,27 +7,59 @@
 	    large: el => el.width > 800,
   	}">
 			<div id="cashierHeader">
-				<div id="countDown">
+				<div id="baseCountDown">
 					<label>Batas Pembayaran</label>
-					<div class="countdown-frame col-12">
+					<div class="countdown-frame card-frame col-12">
 						<div class="block">
 				      <p class="digit">00</p>
 				      <p class="text">Hours</p>
 				    </div>
 				    <div class="divid">
-				    	:
+				    	<span>:</span>
 				    </div>
 				    <div class="block">
 				      <p class="digit">15</p>
 				      <p class="text">Minutes</p>
 				    </div>
 				    <div class="divid">
-				    	:
+				    	<span>:</span>
 				    </div>
 				    <div class="block">
 				      <p class="digit">09</p>
 				      <p class="text">Seconds</p>
 				    </div>
+					</div>
+				</div>
+				<div id="baseOrderDetails">
+					<div class="order-detail-frame card-frame col-12">
+						<div class="order-detail-content row">
+							<div class="col-2 s-px-10 image-icon-frame">
+								<img src="@/assets/images/icon/plane-icon.png" />
+							</div>
+							<div class="col-4 s-px-10">
+								<p class="order-detail-title">Perjalanan</p>
+								<span class="type-order">Tiket Pesawat</span>
+							</div>
+							<div class="col-6 s-px-10">
+								<p class="order-detail-title destination">
+									<span>HLP</span>
+									<span><img src="@/assets/images/icon/arrow-plane.png" /></span>
+									<span>DPS</span>
+								</p>
+								<span class="date-destination">26 Maret 2019</span>
+							</div>
+						</div>
+
+						<div class="order-detail-price row">
+							<div class="col-6">
+								<p>Rp 1,787,500</p>
+							</div>
+							<div class="col-6">
+								<a>
+									<span>Lihat Detail</span> 
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -49,9 +81,10 @@ export default {
 		#cashierHeader{
 			height: 25vh;
 			background: $v-red-linear;
+			padding: 0 15px;
 
-			#countDown{
-				padding: 20px 15px;
+			#baseCountDown{
+				padding: 20px 0;
 
 				label{
 					color: $v-white;
@@ -67,7 +100,6 @@ export default {
 					margin: 10px 0;
 					padding: 10px 0;
 					color: $v-white;
-					border-radius: 5px;
 					border: 1px solid $v-red-border;
 					box-shadow: 2px 2px 2px 0 rgba(232, 232, 232, 0.1);
 
@@ -94,6 +126,78 @@ export default {
 				  	color: $v-black;
 				  }
 				}
+			}
+
+			#baseOrderDetails{
+				.order-detail-frame{
+					background: $v-white;
+					top: 3vh;
+					padding: 0;
+
+					.order-detail-content{
+						padding: 10px 15px;
+
+						.image-icon-frame{
+							img{
+								width: 120%;
+								height: auto;
+								vertical-align: middle;
+								display: inline-block;
+							}
+						}
+
+						.order-detail-title{
+							font-weight: bold;
+							margin-bottom: 0.2rem;
+
+							&.destination{
+								span{
+									img{
+										width: 35%;
+										height: auto;
+										vertical-align: middle;
+										margin: 0 5%;
+									}
+								}
+							}
+						}
+
+						.date-destination{
+							color: $v-grey;
+							font-size: 80%;
+						}
+
+						.type-order{
+							color: $v-red;
+							opacity: 0.7;
+							font-size: 80%;
+						}
+					}
+
+					.order-detail-price{
+						padding: 15px 0;
+						border-top: $border-normal;
+						color: $v-red;
+
+						p{
+							font-size: 120%;
+							margin: 0;
+							font-weight: bold;
+							vertical-align: middle;
+						}
+
+						.col-6{
+							&:last-of-type{
+								text-align: right;
+
+								a{
+									color: $v-red;
+									font-size: 90%;
+								}
+							}
+						}
+					}
+				}	
 			}
 		}
 	}

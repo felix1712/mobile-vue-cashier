@@ -7,26 +7,51 @@
 			large: el => el.width > 800,
 		}">
 			<div id="cashierHeader">
-				<div id="baseCountDown">
-					<label>Batas Pembayaran</label>
-					<div class="countdown-frame card-frame col-12">
-						<div class="block">
-							<p class="digit">00</p>
-							<p class="text">Hours</p>
+				<div id="baseCountDown" :scroll="handleScroll">
+					<div class="count-down-standard" :class="{'unpinned': scrolled}">
+						<label>Batas Pembayaran</label>
+						<div class="countdown-frame card-frame col-12">
+							<div class="block">
+								<p class="digit">00</p>
+								<p class="text">Hours</p>
+							</div>
+							<div class="divid">
+								<span>:</span>
+							</div>
+							<div class="block">
+								<p class="digit">15</p>
+								<p class="text">Minutes</p>
+							</div>
+							<div class="divid">
+								<span>:</span>
+							</div>
+							<div class="block">
+								<p class="digit">09</p>
+								<p class="text">Seconds</p>
+							</div>
 						</div>
-						<div class="divid">
-							<span>:</span>
-						</div>
-						<div class="block">
-							<p class="digit">15</p>
-							<p class="text">Minutes</p>
-						</div>
-						<div class="divid">
-							<span>:</span>
-						</div>
-						<div class="block">
-							<p class="digit">09</p>
-							<p class="text">Seconds</p>
+					</div>
+					<div class="count-down-fixed" :class="{'is-show': !scrolled}">
+						<div class="col-12 s-p-0">
+							<span class="countdown-mini-label">Batas Pembayaran</span>
+							<span class="countdown-mini-frame">
+								12 <span>h</span>
+							</span>
+							<span class="countdown-mini-divid">
+								<span>:</span>
+							</span>
+							<span class="countdown-mini-frame">
+								23 <span>m</span>
+							</span>
+							<span class="countdown-mini-divid">
+								<span>:</span>
+							</span>
+							<span class="countdown-mini-frame">
+								15 <span>s</span>
+							</span>
+							<span class="countdown-mini-icon">
+								<img src="@/assets/images/icon/time-remain-icon.png" />
+							</span>
 						</div>
 					</div>
 				</div>
@@ -56,7 +81,7 @@
 							</div>
 							<div class="col-6">
 								<a>
-									<span>Lihat Detail</span>
+									<span>Lihat Detail <img src="@/assets/images/icon/arrow-menu.png" /></span>
 								</a>
 							</div>
 						</div>
@@ -66,7 +91,7 @@
 			<div id="cashierPayment" class="col-12">
 				<div class="row">
 					<label>Metode Pembayaran</label>
-					<template v-for="item in 6">
+					<template v-for="item in 7">
 						<div id="baseSubPayment" class="col-12 card-frame">
 							<div class="payment-method-item">
 								<p>Uang Elektronik</p>
@@ -92,6 +117,30 @@
 <script>
 export default {
 	name: 'PageCashier',
+	data() {
+		return {
+			limitHeader: 90,
+			scrolled: true,
+			lastPosition: 0,
+		};
+	},
+	methods: {
+		handleScroll() {
+			if (this.lastPosition > this.limitHeader) {
+        this.scrolled = false;
+      } else if (this.lastPosition < this.limitHeader){
+      	this.scrolled = true;
+      }
+      
+      this.lastPosition = window.scrollY;
+		},
+	},
+	created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
 };
 </script>
 
@@ -109,44 +158,94 @@ export default {
 			#baseCountDown{
 				padding: 20px 0;
 
-				label{
-					color: $v-white;
-					display: block;
-					font-size: 80%;
-				}
+				.count-down-standard{
+					transition: 0.25s;
+				  transition-timing-function: ease-out;
+				  transform: translateY(0);
+				  opacity: 1;
 
-				.countdown-frame{
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					background: $v-red-header;
-					margin: 10px 0;
-					padding: 10px 0;
-					color: $v-white;
-					border: 1px solid $v-red-border;
-					box-shadow: 2px 2px 2px 0 rgba(232, 232, 232, 0.1);
-
-					.block {
-						display: flex;
-						flex-direction: column;
-						margin: 0 10%;
-
-						.digit{
-							text-align:center;
-							font-size: 1.6rem;
-						}
-						.text{
-							font-size: 0.7rem;
-						}
-
-						p{
-							margin: 0;
-						}
+					&.unpinned{
+						transform: translateY(-100%);
+						transition-timing-function: ease-in;
+				  	transition: 0.2s;
 					}
 
-					.divid{
-						font-size: 2rem;
-						color: $v-black;
+					label{
+						color: $v-white;
+						display: block;
+						font-size: 80%;
+					}
+
+					.countdown-frame{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background: $v-red-header;
+						margin: 10px 0;
+						padding: 10px 0;
+						color: $v-white;
+						border: 1px solid $v-red-border;
+						box-shadow: 2px 2px 2px 0 rgba(232, 232, 232, 0.1);
+
+						.block {
+							display: flex;
+							flex-direction: column;
+							margin: 0 10%;
+
+							.digit{
+								text-align:center;
+								font-size: 1.6rem;
+							}
+							.text{
+								font-size: 0.7rem;
+							}
+
+							p{
+								margin: 0;
+							}
+						}
+
+						.divid{
+							font-size: 2rem;
+							color: $v-black;
+						}
+					}
+				}
+
+				.count-down-fixed{
+					color: $v-white;
+					font-size: 80%;
+					background: $v-red;
+					padding: 7px 15px;
+					position: fixed;
+					top: 0;
+					right: 0;
+					width: 100%;
+					z-index: 9;
+					//animation
+					transform: translateY(-100%);
+				  transition-timing-function: ease-in;
+				  transition: 0.2s;
+
+				  &.is-show{
+				  	transition: 0.25s;
+					  transition-timing-function: ease-out;
+					  
+					  transform: translateY(0);
+					  opacity: 1;
+				  }
+
+					.countdown-mini-frame{
+						margin: 0 15px;
+					}
+
+					.countdown-mini-icon{
+						img{
+							width: 100%;
+							height: auto;
+							vertical-align: top;
+							max-width: 1rem;
+						}
 					}
 				}
 			}
@@ -216,6 +315,16 @@ export default {
 								a{
 									color: $v-red;
 									font-size: 90%;
+
+									span{
+										img{
+											width: 100%;
+											height: auto;
+											max-width: 0.5rem;
+											margin-left: 7px;
+											vertical-align: middle;
+										}
+									}
 								}
 							}
 						}
@@ -237,6 +346,9 @@ export default {
 			#baseSubPayment{
 				padding: 20px 15px;
 				margin: 10px 0;
+				transform: translateX(0);
+			  transition-timing-function: ease-in;
+			  transition: 0.4s;
 
 				.payment-method-item{
 					float: left;
@@ -262,7 +374,7 @@ export default {
 							width: 100%;
 							height: auto;
 							vertical-align: middle;
-							max-width: 1rem;
+							max-width: 0.5rem;
 						}
 					}
 				}

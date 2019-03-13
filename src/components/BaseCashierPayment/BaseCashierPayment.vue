@@ -8,53 +8,57 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/styles/modules/_variable.scss";
-#cashierPayment {
-  margin-top: 2.5rem;
+		#cashierPayment{
+			margin-top: 2.5rem;
 
-  label {
-    color: $v-black;
-    display: block;
-    font-size: 90%;
-    margin-bottom: 5px;
-  }
+			a{
+				color: $v-black;
 
-  #baseSubPayment {
-    padding: 20px 15px;
-    margin: 10px 0;
-    transform: translateX(0);
-    transition-timing-function: ease-in;
-    transition: 0.4s;
+				label{
+					color: $v-black;
+					display: block;
+					font-size: 90%;
+					margin-bottom: 5px;
+				}
 
-    .payment-method-item {
-      float: left;
-      p {
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      img {
-        width: 100%;
-        height: auto;
-        vertical-align: middle;
-        max-width: 3.5rem;
-      }
-    }
+				#baseSubPayment{
+					padding: 20px 15px;
+					margin: 10px 0;
+					transform: translateX(0);
+				  transition-timing-function: ease-in;
+				  transition: 0.4s;
 
-    .right-item-payment {
-      float: right;
-      display: inline-block;
-      padding: 10px 0;
+					.payment-method-item{
+						float: left;
+						p{
+							font-weight: bold;
+							margin-bottom: 5px;
+						}
+						img{
+							width: 100%;
+							height: auto;
+							vertical-align: middle;
+							max-width: 3.5rem;
+						}
+					}
 
-          .arrow-menu {
-               img {
-          width: 100%;
-          height: auto;
-          vertical-align: middle;
-          max-width: 0.5rem;
-        }
-      }
-    }
-  }
-}
+					.right-item-payment{
+						float: right;
+						display: inline-block;
+						padding: 10px 0;
+
+						.arrow-menu{
+							img{
+								width: 100%;
+								height: auto;
+								vertical-align: middle;
+								max-width: 0.5rem;
+							}
+						}
+					}
+				}
+			}
+		}
 
 #promoFlag {
   padding: 5px 12px;

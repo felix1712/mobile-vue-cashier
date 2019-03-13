@@ -45,8 +45,14 @@
 					</template>
 			</div>
 		</div>
+
+		<div id="pagePayment" v-if="DetailOrder === 'payment_detail'">
+			<router-link :to="{name: 'PageCashier'}">back</router-link>
+			<OrderDetails />
+		</div>
 	</transition>
 </template>
+
 
 
 

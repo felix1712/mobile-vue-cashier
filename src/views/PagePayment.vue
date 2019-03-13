@@ -85,7 +85,7 @@ export default{
 	@import "@/assets/styles/modules/_variable.scss";
 
 	.slide-left-enter-active {
-  transition: all .2s ease;
+  transition: all .5s ease;
 	}
 	.slide-left-enter, .slide-left-leave-to
 	/* .slide-fade-leave-active below version 2.1.8 */ {

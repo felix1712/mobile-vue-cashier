@@ -42,4 +42,12 @@ export default {
     padding: 0 15px;
   }
 }
+	.slide-right-enter-active {
+  	transition: all .5s ease;
+	}
+	.slide-right-enter, .slide-right-leave-to
+	/* .slide-fade-leave-active below version 2.1.8 */ {
+	  transform: translateX(-100%);
+	  opacity: 0;
+	}
 </style>

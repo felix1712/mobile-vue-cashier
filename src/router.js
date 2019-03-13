@@ -24,5 +24,10 @@ export default new Router({
 			name: 'PaymentContainer',
 			component: PagePayment,
 		},
+		{
+			path: '/h5/:detail_order',
+			name: 'DetailOrder',
+			component: PagePayment,
+		},
 	],
 });

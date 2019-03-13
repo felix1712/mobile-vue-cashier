@@ -7,16 +7,22 @@
 	</transition>
 </template>
 
+
+
 <script>
 export default{
 	name: 'PagePayment',
 	data() {
 		return {
 			paymentMethod: null,
+			DetailOrder: null,
 		};
 	},
 	created(){
 		this.paymentMethod = this.$route.params.payment_method;
+		this.DetailOrder = this.$route.params.detail_order
+		console.log(this.DetailOrder)
+		console.log(	this.paymentMethod)
 	}
 }
 </script>

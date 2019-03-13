@@ -1,117 +1,121 @@
 <template>
-	<div
-		id="pageCashier"
-		v-responsive="{
-			tiny: el => el.width < 400,
-			small: el => el.width < 800 && el.width > 300,
-			large: el => el.width > 800,
-		}">
-			<div id="cashierHeader">
-				<div id="baseCountDown" :scroll="handleScroll">
-					<div class="count-down-standard" :class="{'unpinned': scrolled}">
-						<label>Batas Pembayaran</label>
-						<div class="countdown-frame card-frame col-12">
-							<div class="block">
-								<p class="digit">00</p>
-								<p class="text">Hours</p>
+	<transition name="slide-right" mode="out-in">
+		<div
+			id="pageCashier"
+			v-responsive="{
+				tiny: el => el.width < 400,
+				small: el => el.width < 800 && el.width > 300,
+				large: el => el.width > 800,
+			}">
+				<div id="cashierHeader">
+					<div id="baseCountDown" :scroll="handleScroll">
+						<div class="count-down-standard" :class="{'unpinned': scrolled}">
+							<label>Batas Pembayaran</label>
+							<div class="countdown-frame card-frame col-12">
+								<div class="block">
+									<p class="digit">00</p>
+									<p class="text">Hours</p>
+								</div>
+								<div class="divid">
+									<span>:</span>
+								</div>
+								<div class="block">
+									<p class="digit">15</p>
+									<p class="text">Minutes</p>
+								</div>
+								<div class="divid">
+									<span>:</span>
+								</div>
+								<div class="block">
+									<p class="digit">09</p>
+									<p class="text">Seconds</p>
+								</div>
 							</div>
-							<div class="divid">
-								<span>:</span>
-							</div>
-							<div class="block">
-								<p class="digit">15</p>
-								<p class="text">Minutes</p>
-							</div>
-							<div class="divid">
-								<span>:</span>
-							</div>
-							<div class="block">
-								<p class="digit">09</p>
-								<p class="text">Seconds</p>
+						</div>
+						<div class="count-down-fixed" :class="{'is-show': !scrolled}">
+							<div class="col-12 s-p-0">
+								<span class="countdown-mini-label">Batas Pembayaran</span>
+								<span class="countdown-mini-frame">
+									12 <span>h</span>
+								</span>
+								<span class="countdown-mini-divid">
+									<span>:</span>
+								</span>
+								<span class="countdown-mini-frame">
+									23 <span>m</span>
+								</span>
+								<span class="countdown-mini-divid">
+									<span>:</span>
+								</span>
+								<span class="countdown-mini-frame">
+									15 <span>s</span>
+								</span>
+								<span class="countdown-mini-icon">
+									<img src="@/assets/images/icon/time-remain-icon.png" />
+								</span>
 							</div>
 						</div>
 					</div>
-					<div class="count-down-fixed" :class="{'is-show': !scrolled}">
-						<div class="col-12 s-p-0">
-							<span class="countdown-mini-label">Batas Pembayaran</span>
-							<span class="countdown-mini-frame">
-								12 <span>h</span>
-							</span>
-							<span class="countdown-mini-divid">
-								<span>:</span>
-							</span>
-							<span class="countdown-mini-frame">
-								23 <span>m</span>
-							</span>
-							<span class="countdown-mini-divid">
-								<span>:</span>
-							</span>
-							<span class="countdown-mini-frame">
-								15 <span>s</span>
-							</span>
-							<span class="countdown-mini-icon">
-								<img src="@/assets/images/icon/time-remain-icon.png" />
-							</span>
-						</div>
-					</div>
-				</div>
-				<div id="baseOrderDetails">
-					<div class="order-detail-frame card-frame col-12">
-						<div class="order-detail-content row">
-							<div class="col-2 s-px-10 image-icon-frame">
-								<img src="@/assets/images/icon/plane-icon.png"/>
+					<div id="baseOrderDetails">
+						<div class="order-detail-frame card-frame col-12">
+							<div class="order-detail-content row">
+								<div class="col-2 s-px-10 image-icon-frame">
+									<img src="@/assets/images/icon/plane-icon.png"/>
+								</div>
+								<div class="col-4 s-px-10">
+									<p class="order-detail-title">Perjalanan</p>
+									<span class="type-order">Tiket Pesawat</span>
+								</div>
+								<div class="col-6 s-px-10">
+									<p class="order-detail-title destination">
+										<span>HLP</span>
+										<span><img src="@/assets/images/icon/arrow-plane.png"/></span>
+										<span>DPS</span>
+									</p>
+									<span class="date-destination">26 Maret 2019</span>
+								</div>
 							</div>
-							<div class="col-4 s-px-10">
-								<p class="order-detail-title">Perjalanan</p>
-								<span class="type-order">Tiket Pesawat</span>
-							</div>
-							<div class="col-6 s-px-10">
-								<p class="order-detail-title destination">
-									<span>HLP</span>
-									<span><img src="@/assets/images/icon/arrow-plane.png"/></span>
-									<span>DPS</span>
-								</p>
-								<span class="date-destination">26 Maret 2019</span>
-							</div>
-						</div>
 
-						<div class="order-detail-price row">
-							<div class="col-6">
-								<p>Rp 1,787,500</p>
-							</div>
-							<div class="col-6">
-								<a>
-									<span>Lihat Detail <img src="@/assets/images/icon/arrow-menu.png" /></span>
-								</a>
+							<div class="order-detail-price row">
+								<div class="col-6">
+									<p>Rp 1,787,500</p>
+								</div>
+								<div class="col-6">
+									<a>
+										<span>Lihat Detail <img src="@/assets/images/icon/arrow-menu.png" /></span>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id="cashierPayment" class="col-12">
-				<div class="row">
-					<label>Metode Pembayaran</label>
-					<template v-for="item in 7">
-						<div id="baseSubPayment" class="col-12 card-frame">
-							<div class="payment-method-item">
-								<p>Uang Elektronik</p>
-								<img src="@/assets/images/icon/gopay-icon.png" />
-							</div>
-							<div class="right-item-payment">
-								<span class="promo-menu">
-									<div id="promoFlag">
-										<span>%</span>
+				<div id="cashierPayment" class="col-12">
+					<div class="row">
+						<label>Metode Pembayaran</label>
+						<template v-for="item in 7">
+							<router-link :to="{name: 'PaymentContainer', params: {payment_method: 'go-pay'}}">
+								<div id="baseSubPayment" class="col-12 card-frame">
+									<div class="payment-method-item">
+										<p>Uang Elektronik</p>
+										<img src="@/assets/images/icon/gopay-icon.png" />
 									</div>
-								</span>
-								<span class="arrow-menu">
-									<img src="@/assets/images/icon/arrow-menu.png" />
-								</span>
-							</div>
-						</div>
-					</template>
+									<div class="right-item-payment">
+										<span class="promo-menu">
+											<div id="promoFlag">
+												<span>%</span>
+											</div>
+										</span>
+										<span class="arrow-menu">
+											<img src="@/assets/images/icon/arrow-menu.png" />
+										</span>
+									</div>
+								</div>
+							</router-link>
+						</template>
+					</div>
 				</div>
-			</div>
-	</div>
+		</div>
+	</transition>
 </template>
 
 <script>
@@ -336,45 +340,49 @@ export default {
 		#cashierPayment{
 			margin-top: 2.5rem;
 
-			label{
+			a{
 				color: $v-black;
-				display: block;
-				font-size: 90%;
-				margin-bottom: 5px;
-			}
 
-			#baseSubPayment{
-				padding: 20px 15px;
-				margin: 10px 0;
-				transform: translateX(0);
-			  transition-timing-function: ease-in;
-			  transition: 0.4s;
-
-				.payment-method-item{
-					float: left;
-					p{
-						font-weight: bold;
-						margin-bottom: 5px;
-					}
-					img{
-						width: 100%;
-						height: auto;
-						vertical-align: middle;
-						max-width: 3.5rem;
-					}
+				label{
+					color: $v-black;
+					display: block;
+					font-size: 90%;
+					margin-bottom: 5px;
 				}
 
-				.right-item-payment{
-					float: right;
-					display: inline-block;
-					padding: 10px 0;
+				#baseSubPayment{
+					padding: 20px 15px;
+					margin: 10px 0;
+					transform: translateX(0);
+				  transition-timing-function: ease-in;
+				  transition: 0.4s;
 
-					.arrow-menu{
+					.payment-method-item{
+						float: left;
+						p{
+							font-weight: bold;
+							margin-bottom: 5px;
+						}
 						img{
 							width: 100%;
 							height: auto;
 							vertical-align: middle;
-							max-width: 0.5rem;
+							max-width: 3.5rem;
+						}
+					}
+
+					.right-item-payment{
+						float: right;
+						display: inline-block;
+						padding: 10px 0;
+
+						.arrow-menu{
+							img{
+								width: 100%;
+								height: auto;
+								vertical-align: middle;
+								max-width: 0.5rem;
+							}
 						}
 					}
 				}
@@ -415,5 +423,17 @@ export default {
 		  border: 7px solid #fff;
 		  border-radius: 8px;
 	  }
+	}
+
+	.slide-right-enter-active {
+  	transition: all 0.5s ease;
+	}
+	.slide-right-leave-active {
+	  transition: all 0.5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	}
+	.slide-right-enter, .slide-right-leave-to
+	/* .slide-fade-leave-active below version 2.1.8 */ {
+	  transform: translateX(-100%);
+	  opacity: 0;
 	}
 </style>

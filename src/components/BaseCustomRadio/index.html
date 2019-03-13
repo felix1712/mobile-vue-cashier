@@ -1,0 +1,15 @@
+<div class="base-custom-radio">
+	<label :for="radioId">
+		<div class="radio-frame">
+			<input :name="radioName" type="radio"  :id="radioId" :value="radioValue" @click="radioChange(radioValue)" v-model="picked" :disabled="radioDisabled">
+			<div class="custom-radio"></div>
+		</div>
+		<div class="label-frame">
+			<span>{{radioLabel}}</span>
+			<slot name="icon_payment" /> 
+		</div>
+	</label>
+	<div class="form-payment-frame" v-if="this.$slots.form_payment && this.picked == radioValue">
+		<slot name="form_payment" />
+	</div>
+</div>

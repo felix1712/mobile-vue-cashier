@@ -1,4 +1,5 @@
 <template>
+<transition name="slide-right" mode="out-in">
   <div
     id="pageCashier"
     v-responsive="{
@@ -13,6 +14,7 @@
     </div>
     <BaseCashierPayment/>
   </div>
+</transition>
 </template>
 
 <script>

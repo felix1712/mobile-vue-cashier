@@ -34,7 +34,7 @@
 					<div class="order-detail-frame card-frame col-12">
 						<div class="order-detail-content row">
 							<div class="col-2 s-px-10 image-icon-frame">
-								<img src="@/assets/images/icon/plane-icon.png" />
+								<img src="@/assets/images/icon/plane-icon.png"/>
 							</div>
 							<div class="col-4 s-px-10">
 								<p class="order-detail-title">Perjalanan</p>
@@ -43,7 +43,7 @@
 							<div class="col-6 s-px-10">
 								<p class="order-detail-title destination">
 									<span>HLP</span>
-									<span><img src="@/assets/images/icon/arrow-plane.png" /></span>
+									<span><img src="@/assets/images/icon/arrow-plane.png"/></span>
 									<span>DPS</span>
 								</p>
 								<span class="date-destination">26 Maret 2019</span>
@@ -61,6 +61,29 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div id="cashierPayment" class="col-12">
+				<div class="row">
+					<label>Metode Pembayaran</label>
+					<template v-for="item in 6">
+						<div id="baseSubPayment" class="col-12 card-frame">
+							<div class="payment-method-item">
+								<p>Uang Elektronik</p>
+								<img src="@/assets/images/icon/gopay-icon.png" />
+							</div>
+							<div class="right-item-payment">
+								<span class="promo-menu">
+									<div id="promoFlag">
+										<span>%</span>
+									</div>
+								</span>
+								<span class="arrow-menu">
+									<img src="@/assets/images/icon/arrow-menu.png" />
+								</span>
+							</div>
+						</div>
+					</template>
 				</div>
 			</div>
 	</div>
@@ -200,5 +223,85 @@ export default {
 				}
 			}
 		}
+
+		#cashierPayment{
+			margin-top: 2.5rem;
+
+			label{
+				color: $v-black;
+				display: block;
+				font-size: 90%;
+				margin-bottom: 5px;
+			}
+
+			#baseSubPayment{
+				padding: 20px 15px;
+				margin: 10px 0;
+
+				.payment-method-item{
+					float: left;
+					p{
+						font-weight: bold;
+						margin-bottom: 5px;
+					}
+					img{
+						width: 100%;
+						height: auto;
+						vertical-align: middle;
+						max-width: 3.5rem;
+					}
+				}
+
+				.right-item-payment{
+					float: right;
+					display: inline-block;
+					padding: 10px 0;
+
+					.arrow-menu{
+						img{
+							width: 100%;
+							height: auto;
+							vertical-align: middle;
+							max-width: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#promoFlag{
+		padding: 5px 12px;
+	  background: $v-red-linear;
+	  color: $v-white;
+	  font-weight: bold;
+	  position: relative;
+	  display: inline-block;
+	  margin-right: 15px;
+	  border-radius: 5px;
+
+	  &:before{
+	  	content: "";
+		  width: 0px;
+		  height: 0px;
+		  position: absolute !important;
+		  z-index: 100;
+		  top: 8px;
+		  left: -10px;
+		  border: 7px solid #fff;
+		  border-radius: 8px;
+	  }
+
+	  &:after{
+	  	content: "";
+		  width: 0px;
+		  height: 0px;
+		  position: absolute !important;
+		  z-index: 100;
+		  top: 8px;
+		  right: -10px;
+		  border: 7px solid #fff;
+		  border-radius: 8px;
+	  }
 	}
 </style>

@@ -27,6 +27,7 @@
 			<div class="payment-container">
 				<!-- component implement here -->
 				<router-link :to="{name: 'PageCashier'}"> Mundur </router-link>
+				<router-link :to="{name: 'CreditCard'}"> CC </router-link>
 					<template v-for="(item, index) in 5">
 						<BaseCustomRadio :radioId="'uangElektronik'+index" :radioName="'method_uang_elektronik'" :radioLabel="'GO-PAY'" :radioValue="index" class="card-frame s-py-7">
 							<template v-slot:icon_payment>
@@ -72,57 +73,10 @@ export default{
 <style lang="scss" scoped>
 	@import "@/assets/styles/modules/_variable.scss";
 
-	.slide-left-enter-active {
-  transition: all .2s ease;
-	}
-	.slide-left-enter, .slide-left-leave-to
-	/* .slide-fade-leave-active below version 2.1.8 */ {
-	  transform: translateX(100%);
-	  opacity: 0;
-	}
-
 	#pagePayment{
 		.payment-container{
 			padding:15px;
 			margin-top: 30px;
-		}
-	}
-
-	// will deleted
-	.count-down-fixed{
-		color: $v-white;
-		font-size: 80%;
-		background: $v-red;
-		padding: 7px 15px;
-		position: fixed;
-		top: 0;
-		right: 0;
-		width: 100%;
-		z-index: 9;
-		//animation
-		transform: translateY(-100%);
-	  transition-timing-function: ease-in;
-	  transition: 0.2s;
-
-	  &.is-show{
-	  	transition: 0.25s;
-		  transition-timing-function: ease-out;
-		  
-		  transform: translateY(0);
-		  opacity: 1;
-	  }
-
-		.countdown-mini-frame{
-			margin: 0 15px;
-		}
-
-		.countdown-mini-icon{
-			img{
-				width: 100%;
-				height: auto;
-				vertical-align: top;
-				max-width: 1rem;
-			}
 		}
 	}
 </style>

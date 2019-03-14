@@ -1,0 +1,36 @@
+<div id="baseOrderDetails">
+    <div class="order-detail-frame card-frame col-12">
+        <div class="order-detail-content row">
+            <div class="col-2 s-px-10 image-icon-frame">
+                <img src="@/assets/images/icon/plane-icon.png"/>
+            </div>
+            <div class="col-4 s-px-10">
+                <p class="order-detail-title">Perjalanan</p>
+                <span class="type-order">Tiket Pesawat</span>
+            </div>
+            <div class="col-6 s-px-10">
+                <p class="order-detail-title destination">
+                    <span>HLP</span>
+                    <span><img src="@/assets/images/icon/arrow-plane.png"/></span>
+                    <span>DPS</span>
+                </p>
+                <span class="date-destination">26 Maret 2019</span>
+            </div>
+        </div>
+
+        <div class="order-detail-price row">
+            <div class="col-6">
+                <p>Rp 1,787,500</p>
+            </div>
+            <div class="col-6">
+                    <router-link :to="{name: 'DetailOrder', params: {detail_order: 'payment_detail'}}">
+                        <a>
+                            <span>Lihat Detail <img src="@/assets/images/icon/arrow-menu.png" /></span>
+                        </a>
+                    </router-link>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <router-link :to="{name: 'PaymentContainer', params: {payment_method: 'go-pay'}}"> -->

@@ -46,8 +46,16 @@
 					</template>
 			</div>
 		</div>
+
+		<div id="pagePayment" v-if="DetailOrder === 'payment_detail'">
+			<router-link :to="{name: 'PageCashier'}">back</router-link>
+			<OrderDetails />
+		</div>
 	</transition>
 </template>
+
+
+
 
 <script>
 import BaseCustomRadio from '@/components/BaseCustomRadio/BaseCustomRadio.vue';
@@ -62,17 +70,21 @@ export default{
 	data() {
 		return {
 			paymentMethod: null,
+			DetailOrder: null,
 		};
 	},
 	created(){
 		this.paymentMethod = this.$route.params.payment_method;
+		this.DetailOrder = this.$route.params.detail_order
+		console.log(this.DetailOrder)
+		console.log(	this.paymentMethod)
 	}
 }
 </script>
 
 <style lang="scss" scoped>
 	@import "@/assets/styles/modules/_variable.scss";
-
+	
 	#pagePayment{
 		.payment-container{
 			padding:15px;

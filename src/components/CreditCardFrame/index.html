@@ -1,15 +1,16 @@
 <div id="creditCardFrame">
 		<div class="row">
 			<div class="col-6">
-				<p>05 <span class="divider">/</span> 22</p>
+				<p>{{cardExpiredMonth}} <span class="divider">/</span> {{cardExpiredYear}}</p>
 			</div>
 			<div class="col-6 s-ta-r">
-				<img class="cc-logo" src="@/assets/images/icon/visa-logo.png" />
+				<img class="cc-logo" src="@/assets/images/icon/visa-logo.png" v-if="cardType == 'visa'"/>
+				<img class="cc-logo" src="@/assets/images/icon/mastercard-logo.png" v-if="cardType == 'mastercard'"/>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<p>Radiyan Abi Priyanda</p>
+				<p>{{cardHolder}}</p>
 			</div>
 		</div>
 		<div class="row">
@@ -18,7 +19,7 @@
 					<span>****</span>
 					<span>****</span>
 					<span>****</span>
-					<span class="last-number">8764</span>
+					<span class="last-number">{{lastCardNumber}}</span>
 				</h4>
 			</div>
 		</div>

@@ -3,7 +3,17 @@
 <script>
 export default {
 	name: 'CreditCardFrame',
-	props: {
+	props: ['cardNumber','cardHolder','cardExpired','cardType','cardPromo'],
+	computed: {
+		lastCardNumber() {
+			return this.cardNumber.substr(this.cardNumber.length - 4);
+		},
+		cardExpiredMonth() {
+			return this.cardExpired.substring(0, 2);
+		},
+		cardExpiredYear() {
+			return this.cardExpired.substring(3, 5);
+		},
 	},
 }
 </script>

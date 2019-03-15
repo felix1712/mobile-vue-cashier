@@ -1,48 +1,54 @@
-<div id="baseCountDown" :scroll="handleScroll">
-    <div class="count-down-standard" :class="{'unpinned': scrolled}" v-if="!showFixedOnly">
-        <label>Batas Pembayaran</label>
-        <div class="countdown-frame card-frame col-12">
-            <div class="block">
-                <p class="digit">00</p>
-                <p class="text">Hours</p>
-            </div>
-            <div class="divid">
-                <span>:</span>
-            </div>
-            <div class="block">
-                <p class="digit">15</p>
-                <p class="text">Minutes</p>
-            </div>
-            <div class="divid">
-                <span>:</span>
-            </div>
-            <div class="block">
-                <p class="digit">09</p>
-                <p class="text">Seconds</p>
-            </div>
-        </div>
-    </div>
-    <div class="count-down-fixed" :class="{'is-show': !scrolled}">
-        <div class="col-12 s-p-0">
-            <span class="countdown-mini-label">Batas Pembayaran</span>
-            <span class="countdown-mini-frame">
-                12 <span>h</span>
-            </span>
-            <span class="countdown-mini-divid">
-                <span>:</span>
-            </span>
-            <span class="countdown-mini-frame">
-                23 <span>m</span>
-            </span>
-            <span class="countdown-mini-divid">
-                <span>:</span>
-            </span>
-            <span class="countdown-mini-frame">
-                15 <span>s</span>
-            </span>
-            <span class="countdown-mini-icon">
-                <img src="@/assets/images/icon/time-remain-icon.png" />
-            </span>
-        </div>
-    </div>
+<div id="baseCountDown" :scroll="handleScroll"
+	v-responsive="{
+	  tiny: el => el.width < 400,
+	  small: el => el.width < 800 && el.width > 400,
+	  large: el => el.width > 800,
+	}"
+>
+	<div class="count-down-standard" :class="{'unpinned': scrolled}" v-if="!showFixedOnly">
+		<label>Batas Pembayaran</label>
+		<div class="countdown-frame card-frame col-12">
+			<div class="block">
+				<p class="digit">00</p>
+				<p class="text">Hours</p>
+			</div>
+			<div class="divid">
+				<span>:</span>
+			</div>
+			<div class="block">
+				<p class="digit">15</p>
+				<p class="text">Minutes</p>
+			</div>
+			<div class="divid">
+				<span>:</span>
+			</div>
+			<div class="block">
+				<p class="digit">09</p>
+				<p class="text">Seconds</p>
+			</div>
+		</div>
+	</div>
+	<div class="count-down-fixed" :class="{'is-show': !scrolled}">
+		<div class="col-12 s-p-0">
+			<span class="countdown-mini-label">Batas Pembayaran</span>
+			<span class="countdown-mini-frame">
+				12 <span>h</span>
+			</span>
+			<span class="countdown-mini-divid">
+				<span>:</span>
+			</span>
+			<span class="countdown-mini-frame">
+				23 <span>m</span>
+			</span>
+			<span class="countdown-mini-divid">
+				<span>:</span>
+			</span>
+			<span class="countdown-mini-frame">
+				15 <span>s</span>
+			</span>
+			<span class="countdown-mini-icon">
+				<img src="@/assets/images/icon/time-remain-icon.png" />
+			</span>
+		</div>
+	</div>
 </div>

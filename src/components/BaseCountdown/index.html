@@ -1,5 +1,5 @@
 <div id="baseCountDown" :scroll="handleScroll">
-    <div class="count-down-standard" :class="{'unpinned': scrolled}">
+    <div class="count-down-standard" :class="{'unpinned': scrolled}" v-if="!showFixedOnly">
         <label>Batas Pembayaran</label>
         <div class="countdown-frame card-frame col-12">
             <div class="block">

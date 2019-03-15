@@ -6,7 +6,6 @@ export default {
 	data() {
 		return {
 			limitHeader: 90,
-			scrolled: true,
 			lastPosition: 0,
 		};
 	},
@@ -21,11 +20,25 @@ export default {
 			this.lastPosition = window.scrollY;
 		},
 	},
+	props: {
+		scrolled:{
+			default: true,
+			type: Boolean,
+		},
+		showFixedOnly: {
+			default: false,
+			type: Boolean,
+		}
+	},
 	created() {
-		window.addEventListener('scroll', this.handleScroll);
+		if(!this.showFixedOnly){
+			window.addEventListener('scroll', this.handleScroll);
+		}
 	},
 	destroyed() {
-		window.removeEventListener('scroll', this.handleScroll);
+		if(!this.showFixedOnly){	
+			window.removeEventListener('scroll', this.handleScroll);
+		}
 	},
 };
 </script>

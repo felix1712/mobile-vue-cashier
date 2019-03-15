@@ -1,29 +1,10 @@
 <template>
 	<transition name="slide-left" mode="out-in">
 		<div id="pagePayment">
-			<div class="count-down-fixed is-show">
-				<div class="col-12 s-p-0">
-					<span class="countdown-mini-label">Batas Pembayaran</span>
-					<span class="countdown-mini-frame">
-						12 <span>h</span>
-					</span>
-					<span class="countdown-mini-divid">
-						<span>:</span>
-					</span>
-					<span class="countdown-mini-frame">
-						23 <span>m</span>
-					</span>
-					<span class="countdown-mini-divid">
-						<span>:</span>
-					</span>
-					<span class="countdown-mini-frame">
-						15 <span>s</span>
-					</span>
-					<span class="countdown-mini-icon">
-						<img src="@/assets/images/icon/time-remain-icon.png" />
-					</span>
-				</div>
-			</div>
+			<BaseCountdown 
+				:scrolled="false"
+				:showFixedOnly="true"
+			/>
 			<div class="payment-container">
 				<!-- component implement here -->
 				<router-link :to="{name: 'PageCashier'}"> Mundur </router-link>
@@ -60,12 +41,14 @@
 <script>
 import BaseCustomRadio from '@/components/BaseCustomRadio/BaseCustomRadio.vue';
 import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
+import BaseCountdown from '@/components/BaseCountdown/BaseCountdown.vue';
 
 export default{
 	name: 'PagePayment',
 	components: {
 		BaseCustomRadio,
-		BaseFormGroup
+		BaseFormGroup,
+		BaseCountdown,
 	},
 	data() {
 		return {
@@ -88,7 +71,7 @@ export default{
 	#pagePayment{
 		.payment-container{
 			padding:15px;
-			margin-top: 30px;
+			margin-top: 10px;
 		}
 	}
 </style>

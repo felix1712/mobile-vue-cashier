@@ -58,6 +58,7 @@ export default {
     margin-bottom: 10px;
     font-weight: 700;
     color: $v-label-input;
+    font-size: 85%;
 
     .info-label {
       border: .5px solid rgba(203, 46, 54, 0.5);

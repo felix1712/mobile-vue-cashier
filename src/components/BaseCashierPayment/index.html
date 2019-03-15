@@ -1,6 +1,6 @@
 <div id="cashierPayment" class="col-12">
     <div class="row">
-        <label>Metode Pembayaran</label>
+        <label class="label-container">Metode Pembayaran</label>
         <router-link :to="{name: 'PaymentContainer', params: {payment_method: 'go-pay'}}">
         <template v-for="item in 7">
             <div id="baseSubPayment" class="col-12 card-frame">

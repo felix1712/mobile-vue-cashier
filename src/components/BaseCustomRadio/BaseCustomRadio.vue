@@ -23,11 +23,15 @@ export default {
 		},
 		radioLabel: {
 			required: false,
-		}
+		},
+		periodPrice: {
+			required: false,
+		},
 	},
 	methods: {
 		radioChange(value){
 			this.picked = value;
+			this.$emit('input', this.picked);
 		},
 	}
 };

@@ -12,7 +12,7 @@
       <BaseCountDown/>
       <BaseOrderDetails/>
     </div>
-    <BaseCashierPayment/>
+    <CashierPayment/>
   </div>
 </transition>
 </template>
@@ -20,14 +20,14 @@
 <script>
 import BaseCountDown from '@/components/BaseCountdown/BaseCountdown.vue';
 import BaseOrderDetails from '@/components/BaseOrderDetails/BaseOrderDetails.vue';
-import BaseCashierPayment from '@/components/BaseCashierPayment/BaseCashierPayment.vue';
+import CashierPayment from '@/components/CashierPayment/CashierPayment.vue';
 
 export default {
 	name: 'PageCashier',
 	components: {
 		BaseCountDown,
 		BaseOrderDetails,
-		BaseCashierPayment,
+		CashierPayment,
 	},
 };
 </script>

@@ -2,7 +2,7 @@
 
 <script>
 export default {
-	name: 'BaseCashierPayment',
+	name: 'CashierPayment',
 };
 </script>
 

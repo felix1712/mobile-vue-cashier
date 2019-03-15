@@ -1,4 +1,10 @@
-<div id="creditCardFrame">
+<div id="creditCardFrame"
+	v-responsive="{
+    tiny: el => el.width < 400,
+    small: el => el.width < 800 && el.width > 400,
+    large: el => el.width > 800,
+  }"
+>
 		<div class="row">
 			<div class="col-6">
 				<p>{{cardExpiredMonth}} <span class="divider">/</span> {{cardExpiredYear}}</p>

@@ -61,5 +61,15 @@ export default {
 				}
 			}
 		}
+
+		&.tiny{
+			.cc-logo{
+				max-width: 3rem;
+			}
+
+			h4{
+				font-size: 120%;
+			}
+		}
 	}
 </style>

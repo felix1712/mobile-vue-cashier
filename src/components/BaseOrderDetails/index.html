@@ -1,14 +1,21 @@
-<div id="baseOrderDetails">
+<div 
+	id="baseOrderDetails"
+	v-responsive="{
+    tiny: el => el.width < 400,
+    small: el => el.width < 800 && el.width > 400,
+    large: el => el.width > 800,
+  }"
+>
     <div class="order-detail-frame card-frame col-12">
         <div class="order-detail-content row">
-            <div class="col-2 s-px-10 image-icon-frame">
+            <div class="col-2 image-icon-frame">
                 <img src="@/assets/images/icon/plane-icon.png"/>
             </div>
-            <div class="col-4 s-px-10">
+            <div class="col-4">
                 <p class="order-detail-title">Perjalanan</p>
                 <span class="type-order">Tiket Pesawat</span>
             </div>
-            <div class="col-6 s-px-10">
+            <div class="col-6">
                 <p class="order-detail-title destination">
                     <span>HLP</span>
                     <span><img src="@/assets/images/icon/arrow-plane.png"/></span>

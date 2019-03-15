@@ -4,7 +4,7 @@
     id="pageCashier"
     v-responsive="{
       tiny: el => el.width < 400,
-      small: el => el.width < 800 && el.width > 300,
+      small: el => el.width < 800 && el.width > 400,
       large: el => el.width > 800,
     }"
   >
@@ -41,7 +41,14 @@ export default {
   #cashierHeader {
     height: 25vh;
     background: $v-red-linear;
-    padding: 0 15px;
+    padding: 15px;
+  }
+
+  // custom style for iphone 5
+  &.tiny{
+  	#cashierHeader{
+  		height: 35vh;
+	  }
   }
 }
 	.slide-right-enter-active {

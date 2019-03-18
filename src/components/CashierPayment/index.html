@@ -1,25 +1,43 @@
 <div id="cashierPayment" class="col-12">
-    <div class="row">
-        <label class="label-container">Metode Pembayaran</label>
-        <router-link :to="{name: 'PaymentContainer', params: {payment_method: 'go-pay'}}">
-        <template v-for="item in 7">
-            <div id="baseSubPayment" class="col-12 card-frame">
-                <div class="payment-method-item">
-                    <p>Uang Elektronik</p>
-                    <img src="@/assets/images/icon/gopay-icon.png" />
-                </div>
-                <div class="right-item-payment">
-                    <span class="promo-menu">
-                        <div id="promoFlag">
-                            <span>%</span>
-                        </div>
-                    </span>
-                    <span class="arrow-menu">
-                        <img src="@/assets/images/icon/arrow-menu.png" />
-                    </span>
-                </div>
-            </div>
-        </template>
-        </router-link>
-    </div>
+	<div class="row">
+		<label class="label-container">Metode Pembayaran</label>
+		<router-link :to="{name: 'PaymentContainer', params: {payment_method: 'credit-card'}}">
+			<div id="baseSubPayment" class="col-12 card-frame">
+				<div class="payment-method-item">
+					<p>Kartu Kredit & Debit</p>
+					<img src="@/assets/images/icon/all-gateway.png" />
+				</div>
+				<div class="right-item-payment">
+					<span class="promo-menu">
+						<div id="promoFlag">
+							<span>%</span>
+						</div>
+					</span>
+					<span class="arrow-menu">
+						<img src="@/assets/images/icon/arrow-menu.png" />
+					</span>
+				</div>
+			</div>
+		</router-link>
+		<router-link :to="{name: 'PaymentContainer', params: {payment_method: 'go-pay'}}">
+			<template v-for="item in 7">
+				<div id="baseSubPayment" class="col-12 card-frame">
+					<div class="payment-method-item">
+						<p>Uang Elektronik</p>
+						<img src="@/assets/images/icon/gopay-icon.png" />
+					</div>
+					<div class="right-item-payment">
+						<span class="promo-menu">
+							<div id="promoFlag">
+								<span>%</span>
+							</div>
+						</span>
+						<span class="arrow-menu">
+							<img src="@/assets/images/icon/arrow-menu.png" />
+						</span>
+					</div>
+				</div>
+			</template>
+		</router-link>
+	</div>
 </div>

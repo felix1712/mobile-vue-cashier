@@ -2,6 +2,7 @@
 
 <script>
 import ContainerCreditCard from '@/components/ContainerCreditCard/ContainerCreditCard.vue';
+import ContainerGopay from '@/components/ContainerGopay/ContainerGopay.vue';
 
 export default{
 	name: 'PaymentContainer',
@@ -19,6 +20,7 @@ export default{
 	},
 	components: {
 		ContainerCreditCard,
+		ContainerGopay
 	},
 };
 </script>

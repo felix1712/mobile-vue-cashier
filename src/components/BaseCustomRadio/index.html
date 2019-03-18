@@ -7,7 +7,7 @@
 		<div class="label-frame">
 			<span>{{radioLabel}}</span>
 			<slot name="icon_payment" />
-			<span class="s-float-r">Rp. 195,000</span>
+			<span class="s-float-r" v-if="periodPrice">Rp. 195,000</span>
 		</div>
 	</label>
 	<div class="form-payment-frame" v-if="this.$slots.form_payment && this.picked == radioValue">

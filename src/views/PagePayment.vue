@@ -34,7 +34,7 @@ export default{
 	#pagePayment{
 		.payment-container{
 			padding:15px;
-			margin-top: 10px;
+			// margin-top: 10px;
 		}
 	}
 </style>

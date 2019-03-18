@@ -1,7 +1,9 @@
 <div id="paymentContainer">
-	<router-link :to="{name: 'PageCashier'}"> Mundur </router-link>
-	<router-link :to="{name: 'CreditCard'}"> CC </router-link>
-		<template v-for="(item, index) in 5">
+	<label class="label-container">Credit Card</label>
+	<div class="payment-container-item s-py-7">
+		<ContainerCreditCard/>
+	</div>
+<!-- 		<template v-for="(item, index) in 5">
 			<BaseCustomRadio :radioId="'uangElektronik'+index" :radioName="'method_uang_elektronik'" :radioLabel="'GO-PAY'" :radioValue="index" class="card-frame s-py-7">
 				<template v-slot:icon_payment>
 					<img src="@/assets/images/icon/gopay-icon.png" />
@@ -18,31 +20,5 @@
 			</BaseCustomRadio>
 		</template>
 
-		<a @click="showModal = true">Muncul</a>
-
-		<BaseModal
-			:typeModal="'modalPeriod'"
-			v-if="showModal"
-		>
-			<template slot="header">
-				Period
-			</template>
-			<template slot="body">
-				<template v-for="(item, index) in dummyPeriods">
-					<BaseCustomRadio 
-						:radioLabel="item.periodName == 'Full Payment'?'Bayar Penuh':item.periodName+' x Cicilan'"
-						:radioId="'periode'+index"
-						:radioName="'periode'"
-						:radioValue="item.periodName == 'Full Payment'?'FP':item.periodName"
-						v-model="periods"
-						class="s-my-3"
-					/>
-				</template>
-			</template>
-			<template slot="footer">
-				<a class="btn btn-primary" @click="choosePeriod">
-					Piih
-				</a>
-			</template>
-		</BaseModal>
+		<a @click="showModal = true">Muncul</a> -->
 </div>

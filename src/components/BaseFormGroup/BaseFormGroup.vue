@@ -58,7 +58,7 @@ export default {
     margin-bottom: 10px;
     font-weight: 700;
     color: $v-label-input;
-    font-size: 85%;
+    font-size: 80%;
 
     .info-label {
       border: .5px solid rgba(203, 46, 54, 0.5);
@@ -76,7 +76,7 @@ export default {
     width: 100%;
     height: 50px;
     padding: 10px 15px;
-    font-size: 1rem;
+    font-size: 80%;
     line-height: 1.5;
     color: $v-black;
     background-color: transparent;
@@ -92,6 +92,11 @@ export default {
 
     &:focus{
     	border-bottom: 2px solid $v-grey;
+    }
+
+    &.has-select{
+      background: url("~@/assets/images/icon/arrow-down.png") no-repeat right center;
+      background-size: 1.5rem .65rem;
     }
   }
 

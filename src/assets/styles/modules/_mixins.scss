@@ -157,6 +157,18 @@ $d-code : underline, overline, line-through, none;
   }
 }
 
+// font-size percent
+
+@mixin font-sizes($min, $max){
+	@for $i from $min to $max+1{
+		.s-fs-#{$i}{
+			font-size: #{$i}% !important;
+		}
+	}
+}
+
+@include font-sizes(0, 100);
+
 // Text Color [s-tc-r]
 $c-code : black, grey, red, blue, disabled;
 $c-value : $v-black, $v-grey, $v-red, $v-blue, $v-grey;

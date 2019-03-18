@@ -1,0 +1,112 @@
+<div id="containerCreditCard">
+	<div class="card-frame row s-p-0 s-py-10">
+		<div class="col-12">
+			<BaseFormGroup
+				:labelTitle="'Nomor Kartu'"
+				:inputId="'cardNoInput'"
+			>
+				<input 
+					type="text" 
+					class="s-form-control"
+					v-model="cardNoModel"
+					id="cardNoInput"
+				/>
+			</BaseFormGroup>
+		</div>
+		<div class="col-12">
+			<BaseFormGroup
+				:labelTitle="'Nama Pemegang Kartu'"
+				:inputId="'holderNameInput'"
+			>
+				<input 
+					type="text" 
+					class="s-form-control"
+					v-model="holderNameModel" 
+					id="holderNameInput"
+				/>
+			</BaseFormGroup>
+		</div>
+		<div class="col-12 s-p-0">
+			<div class="col-6">
+				<BaseFormGroup 
+					:labelTitle="'Tanggal Kadaluarsa'"
+					:inputId="'expiredDate'"
+					:withInfo="false"
+				>
+					<input 
+						type="text" 
+						class="s-form-control expired-date"
+						v-model="expiredDateModel"
+						id="expiredDate"
+						maxlength="5"
+						@keyup="changeFormat"
+						placeholder="MM/YY" 
+					/>
+
+						<!-- <template slot="info-header">
+							<img class="cvv-info" src="@/assets/images/icon/expired-card-info.png" />
+						</template> -->
+				</BaseFormGroup>
+			</div>
+			<div class="col-6">
+				<BaseFormGroup 
+					:labelTitle="'CCV / CVV'"
+					:inputId="'cvvInput'"
+					:withInfo="false"
+				>
+					<input 
+						type="number" 
+						class="s-form-control"
+						v-model="cvvModel" 
+						id="cvvInput"
+						maxlength="3" 
+					/>
+						<!-- <template slot="info-header">
+							<img class="cvv-info" src="@/assets/images/icon/cvv-label-info.png" />
+						</template> -->
+				</BaseFormGroup>
+			</div>
+			<div class="col-12">
+				<BaseFormGroup
+					:labelTitle="'Period'"
+					:inputId="'periodsInput'"
+				>
+					<input 
+						type="text" 
+						class="s-form-control has-select"
+						v-model="periodsModel"
+						id="periodsInput"
+						@click="showPeriodModal"
+						readonly="true" 
+					/>
+				</BaseFormGroup>
+			</div>
+		</div>
+	</div>
+
+	<BaseModal
+		:typeModal="'modalPeriod'"
+		v-if="showModal"
+	>
+		<template slot="header">
+			Period
+		</template>
+		<template slot="body">
+			<template v-for="(item, index) in dummyPeriods">
+				<BaseCustomRadio 
+					:radioLabel="item.periodName == 'Full Payment'?'Bayar Penuh':item.periodName+' x Cicilan'"
+					:radioId="'periode'+index"
+					:radioName="'periode'"
+					:radioValue="item.periodName == 'Full Payment'?'FP':item.periodName"
+					v-model="periods"
+					class="s-my-3"
+				/>
+			</template>
+		</template>
+		<template slot="footer">
+			<a class="btn btn-primary" @click="choosePeriod">
+				Piih
+			</a>
+		</template>
+	</BaseModal>
+</div>

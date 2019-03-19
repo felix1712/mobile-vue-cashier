@@ -73,7 +73,7 @@ export default {
 			justify-content: center;
 			background: $v-white;
 			margin: 10px 0;
-			padding: 10px 0;
+			padding: 5px 0;
 			color: $v-black;
 			border: 1px solid $v-light-border;
 			box-shadow: 2px 2px 2px 0 rgba(232, 232, 232, 0.1);
@@ -85,7 +85,8 @@ export default {
 
 				.digit{
 					text-align:center;
-					font-size: 1.6rem;
+					font-size: 1.2rem;
+					font-weight: bold;
 				}
 				.text{
 					font-size: 0.7rem;

@@ -1,6 +1,8 @@
 <template src="./index.html"></template>
 
 <script>
+import BaseModal from '@/components/BaseModal/BaseModal.vue';
+
 export default {
 	name: 'BaseFormGroup',
 	data() {
@@ -32,7 +34,7 @@ export default {
 	},
 
 	components: {
-		// BaseModal,
+		BaseModal,
 	},
 
 	methods: {
@@ -61,13 +63,13 @@ export default {
     font-size: 80%;
 
     .info-label {
-      border: .5px solid rgba(203, 46, 54, 0.5);
+      border: .5px solid rgba($v-blue, 0.5);
       border-radius: 100%;
-      padding: 0px 5px;
-      font-size: 12px;
-      color: rgba(203, 46, 54, 0.5);
+      padding: 0px 4px;
+      font-size: 80%;
+      color: rgba($v-blue, 0.5);
       cursor: pointer;
-      margin-left: 5px;
+      margin-left: 10px;
     }
   }
 

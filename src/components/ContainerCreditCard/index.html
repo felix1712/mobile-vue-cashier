@@ -28,7 +28,7 @@
 			<div class="col-6">
 				<BaseFormGroup 
 					:labelTitle="'Tanggal Kadaluarsa'"
-					:withInfo="false"
+					:withInfo="true"
 				>
 					<input 
 						type="text" 
@@ -40,15 +40,15 @@
 						placeholder="MM/YY" 
 					/>
 
-						<!-- <template slot="info-header">
+						<template slot="info-header">
 							<img class="cvv-info" src="@/assets/images/icon/expired-card-info.png" />
-						</template> -->
+						</template>
 				</BaseFormGroup>
 			</div>
 			<div class="col-6">
 				<BaseFormGroup 
 					:labelTitle="'CCV / CVV'"
-					:withInfo="false"
+					:withInfo="true"
 				>
 					<input 
 						type="number" 
@@ -57,9 +57,9 @@
 						id="cvvInput"
 						maxlength="3" 
 					/>
-						<!-- <template slot="info-header">
+						<template slot="info-header">
 							<img class="cvv-info" src="@/assets/images/icon/cvv-label-info.png" />
-						</template> -->
+						</template>
 				</BaseFormGroup>
 			</div>
 			<div class="col-12">

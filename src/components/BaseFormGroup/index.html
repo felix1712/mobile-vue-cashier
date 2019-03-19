@@ -4,9 +4,8 @@
 	<small v-if="errorMessage" class="field-text-error">{{errorMessage}}</small>
 	<small v-if="infoInputMessage" v-show="!errorMessage" class="form-group-input-text">{{infoInputMessage}}</small>
 
-<!-- 	<BaseModal 
+	<BaseModal 
 		v-if="openedModal"
-		:classCloseButton="'corner'"
 		:backgroundTransparent="true"
 		@close="closeModal"
 	>
@@ -21,5 +20,5 @@
 		<template v-slot:footer>
 			<slot name="info-footer"></slot>
 		</template>
-	</BaseModal> -->
+	</BaseModal>
 </div>

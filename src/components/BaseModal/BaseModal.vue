@@ -6,12 +6,15 @@ export default {
 	props: {
 		typeModal: {
 			required: false,
+		},
+		backgroundTransparent: {
+			required: false,
 		}
 	}
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	@import "@/assets/styles/modules/_variable.scss";
 
 	.modal-mask {
@@ -30,18 +33,29 @@ export default {
 			vertical-align: middle;
 
 			.modal-container {
-				min-width: 300px;
-				width: 300px;
+				min-width: 1px;
+				width: 90%;
 				margin: 0px auto;
-				padding: 20px 30px;
-				background-color: #fff;
+				padding: 15px;
 				border-radius: 2px;
+				background: $v-white;
 				box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
 				transition: all .3s ease;
-
-				&.transparent{
+				
+				&.transparent{	
 					background: transparent;
 					box-shadow: none;
+				}
+
+				.close-button{
+					color: $v-red;
+					border: 1.5px solid;
+					border-radius: 100%;
+					padding: 0 9px 3px 9px;
+					font-size: 1.5rem;
+					position: relative;
+					left: 87%;
+					top: 1.2rem;
 				}
 
 				.modal-header{
@@ -49,6 +63,13 @@ export default {
 					color: $v-black;
 					font-weight: bold;
 					padding: 0 10px;
+
+					img{
+						width: 100%;
+						height: auto;
+						vertical-align: middle;
+						max-width: 15rem;
+					}
 				}
 
 				.modal-body {

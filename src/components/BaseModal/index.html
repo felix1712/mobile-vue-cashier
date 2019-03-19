@@ -1,14 +1,14 @@
 <transition :name="typeModal == 'modalPeriod' ? 'modal-periods' : 'modal'">
 	<div class="modal-mask">
 		<div class="modal-wrapper" :class="{'modal-period': typeModal == 'modalPeriod'}">
-			<div class="modal-container">
+			<div class="modal-container" :class="{'transparent' : backgroundTransparent}">
 				<a class="close-button" @click="$emit('close')">&times;</a>
 				<div class="modal-header">
 					<slot name="header">
 					</slot>
 				</div>
 
-				<div class="modal-body">
+				<div class="modal-body" v-if="this.$slots.body">
 					<slot name="body">
 					</slot>
 				</div>

@@ -1,8 +1,7 @@
 <template>
 	<transition name="slide-left" mode="out-in">
 		<div id="pagePayment">
-			<BaseCountdown 
-				:scrolled="false"
+			<BaseCountdown
 				:showFixedOnly="true"
 			/>
 			<div class="payment-container">

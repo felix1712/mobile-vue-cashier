@@ -7,6 +7,7 @@ export default {
 		return {
 			limitHeader: 90,
 			lastPosition: 0,
+			scrolled: false,
 		};
 	},
 	methods: {
@@ -21,10 +22,6 @@ export default {
 		},
 	},
 	props: {
-		scrolled:{
-			default: true,
-			type: Boolean,
-		},
 		showFixedOnly: {
 			default: false,
 			type: Boolean,
@@ -32,6 +29,7 @@ export default {
 	},
 	created() {
 		if(!this.showFixedOnly){
+			this.scrolled = true;
 			window.addEventListener('scroll', this.handleScroll);
 		}
 	},

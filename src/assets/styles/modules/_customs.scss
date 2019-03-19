@@ -154,12 +154,12 @@ button:focus {
   color: $v-red;
   text-align: center;
   display: inline-block;
-  padding: 0 .5rem;
-  border-radius: 4px;
+  padding: .1rem .5rem;
+  border-radius: 3px;
 
-  span{
+  p{
   	font-size: 65%;
-  	vertical-align: top;
+  	margin: 0;
   }
 
   &:before,
@@ -168,7 +168,7 @@ button:focus {
     width:23px;
     content: '';
     position: absolute;
-    top: calc(0.3rem - 1px);
+    top: calc(0.3rem - 0px);
     height: .5rem;
     width: .4rem;
     border: 2px solid $v-red;

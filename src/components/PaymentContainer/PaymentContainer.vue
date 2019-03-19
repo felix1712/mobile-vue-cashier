@@ -4,6 +4,7 @@
 import ContainerCreditCard from '@/components/ContainerCreditCard/ContainerCreditCard.vue';
 import ContainerGopay from '@/components/ContainerGopay/ContainerGopay.vue';
 import ContainerVa from '@/components/ContainerVa/ContainerVa.vue';
+import ContainerBt from '@/components/ContainerBt/ContainerBt.vue';
 
 export default{
 	name: 'PaymentContainer',
@@ -23,6 +24,7 @@ export default{
 		ContainerCreditCard,
 		ContainerGopay,
 		ContainerVa,
+		ContainerBt,
 	},
 	mounted() {
 		console.log(this.$route.params);

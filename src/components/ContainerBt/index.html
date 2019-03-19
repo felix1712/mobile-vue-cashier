@@ -1,0 +1,20 @@
+<div id="containerBt">
+	<div v-for="(item, index) in dummyBtBank">
+		<BaseCustomRadio :radioId="item.value" :radioName="'method_bt'" :radioLabel="item.name" :radioValue="item.value" :periodPrice="false" class="card-frame s-py-7 s-px-10" v-model="bt_choose">
+			<template v-slot:icon_payment>
+				<div class="logo-payment-frame s-float-r" v-for="image in item.logo">
+					<img :src="require(`@/assets/images/icon/${image}.png`)" class="logo-payment-menu" />
+				</div>
+			</template>
+			<template v-slot:form_payment v-if="bt_choose == item.value">
+				<BaseFormGroup 
+				:labelTitle="'Nama Pemilik Rekening'"
+				:inputId="'holderName'"
+				:infoInputMessage="'Mohon masukkan Nama pemilik rekening bank yang akan anda gunakan untuk melakukan transfer.'"
+				>
+					<input type="text" name="" class="s-form-control">
+				</BaseFormGroup>
+			</template>
+		</BaseCustomRadio>
+	</div>
+</div>

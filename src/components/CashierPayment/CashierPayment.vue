@@ -42,26 +42,6 @@ export default {
 							font-weight: bold;
 							margin-bottom: 5px;
 						}
-						.logo-payment-frame{
-							width: 2.5rem;
-							height: 1.5rem;
-							margin: 0 5px;
-							padding: 0 5px;
-							display: inline-block;
-							text-align: center;
-							border: $border-normal;
-
-							&:first-of-type{
-								margin-left: 0;
-							}
-
-							img{
-								max-width: 100%;
-								max-height: 100%;
-								height: auto;
-								vertical-align: middle;
-							}
-						}
 					}
 
 					.right-item-payment{

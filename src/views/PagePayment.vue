@@ -1,6 +1,13 @@
 <template>
 	<transition name="slide-left" mode="out-in">
-		<div id="pagePayment">
+		<div 
+			id="pagePayment"
+			v-responsive="{
+	      tiny: el => el.width <= 320 ,
+	      small: el => el.width < 800 && el.width > 320,
+	      large: el => el.width > 800,
+	    }"
+		>
 			<BaseCountdown
 				:showFixedOnly="true"
 			/>
@@ -34,6 +41,10 @@ export default{
 		.payment-container{
 			padding:15px;
 			// margin-top: 10px;
+		}
+
+		&.tiny{
+			font-size: 80%;
 		}
 	}
 </style>

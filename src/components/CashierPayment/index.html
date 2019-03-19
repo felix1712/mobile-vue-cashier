@@ -2,7 +2,7 @@
 	<div class="row">
 		<label class="label-container">Metode Pembayaran</label>
 		<template v-for="item in dummyPaymentMethod">
-			<router-link :to="{name: 'PaymentContainer', params: {payment_method: item.payCode}}">
+			<router-link :to="{name: 'PaymentContainer', params: {payment_method: item.payCode, method_label: item.title}}">
 				<div id="baseSubPayment" class="col-12 card-frame">
 					<div class="payment-method-item">
 						<p>{{item.title}}</p>

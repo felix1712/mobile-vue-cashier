@@ -80,7 +80,6 @@ export default {
 					width: 100%;
 					height: auto;
 					max-width: 3.5rem;
-					margin-left: 15px;
 				}
 			}
 		}

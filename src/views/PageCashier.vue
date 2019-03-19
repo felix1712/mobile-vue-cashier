@@ -46,7 +46,7 @@ export default {
 
   // custom style for iphone 5
   &.tiny{
-    font-size: 80%;
+    font-size: 85%;
   }
 }
 	.slide-right-enter-active {

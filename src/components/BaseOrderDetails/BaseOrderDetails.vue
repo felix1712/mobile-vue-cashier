@@ -12,7 +12,6 @@ export default {
 #baseOrderDetails{
 	.order-detail-frame{
 		background: $v-white;
-		top: 0vh;
 		padding: 0;
 
 		.order-detail-content{

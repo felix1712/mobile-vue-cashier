@@ -9,7 +9,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/styles/modules/_variable.scss";
 		#cashierPayment{
-			margin-top: 2.5rem;
+			margin-top: 1rem;
 
 			a{
 				color: $v-black;

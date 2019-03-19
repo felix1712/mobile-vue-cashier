@@ -39,15 +39,14 @@ export default {
   width: 100%;
 
   #cashierHeader {
-    height: 25vh;
-    background: $v-red-linear;
+    // background: $v-red-linear;
     padding: 15px;
   }
 
   // custom style for iphone 5
   &.tiny{
   	#cashierHeader{
-  		height: 35vh;
+  		// height: 35vh;
 	  }
   }
 }

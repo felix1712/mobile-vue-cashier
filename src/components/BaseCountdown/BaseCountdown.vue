@@ -61,7 +61,8 @@ export default {
 		}
 
 		label{
-			color: $v-white;
+			color: $v-black;
+			font-weight: bold;
 			display: block;
 			font-size: 80%;
 		}
@@ -70,11 +71,11 @@ export default {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background: $v-red-header;
+			background: $v-white;
 			margin: 10px 0;
 			padding: 10px 0;
-			color: $v-white;
-			border: 1px solid $v-red-border;
+			color: $v-black;
+			border: 1px solid $v-light-border;
 			box-shadow: 2px 2px 2px 0 rgba(232, 232, 232, 0.1);
 
 			.block {

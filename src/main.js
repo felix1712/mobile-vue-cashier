@@ -2,7 +2,7 @@ import Vue from 'vue';
 // plugins
 import { VueResponsiveComponents } from 'vue-responsive-components';
 import router from './router';
-import store from './store';
+import store from './store/index';
 import './registerServiceWorker';
 import App from './App.vue';
 import customJs from '@/mixins/custom';

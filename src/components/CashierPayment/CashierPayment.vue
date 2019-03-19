@@ -1,12 +1,15 @@
 <template src="./index.html"></template>
 
 <script>
+// import vuex
+import { mapState, mapActions } from 'vuex';
+
 export default {
 	name: 'CashierPayment',
-	data() {
-		return {
-			dummyImageCC: ['mastercard-color', 'visa-color', 'jcb-color'],
-		}
+	computed: {
+		...mapState({
+			dummyPaymentMethod: state => state.global.dummyPaymentMethod,
+		})
 	}
 };
 </script>

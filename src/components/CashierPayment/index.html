@@ -1,38 +1,18 @@
 <div id="cashierPayment" class="col-12">
 	<div class="row">
 		<label class="label-container">Metode Pembayaran</label>
-		<router-link :to="{name: 'PaymentContainer', params: {payment_method: 'credit-card'}}">
-			<div id="baseSubPayment" class="col-12 card-frame">
-				<div class="payment-method-item">
-					<p>Kartu Kredit & Debit</p>
-					<div class="logo-payment-frame" v-for="image in dummyImageCC">
-						<img :src="require(`@/assets/images/icon/${image}.png`)" class="logo-payment-menu" />
-					</div>
-				</div>
-				<div class="right-item-payment">
-					<span class="promo-menu">
-						<div class="promo-flag-first">
-							<span>Promo %</span>
-						</div>
-					</span>
-					<span class="arrow-menu">
-						<img src="@/assets/images/icon/arrow-menu.png" />
-					</span>
-				</div>
-			</div>
-		</router-link>
-		<router-link :to="{name: 'PaymentContainer', params: {payment_method: 'go-pay'}}">
-			<template v-for="item in 7">
+		<template v-for="item in dummyPaymentMethod">
+			<router-link :to="{name: 'PaymentContainer', params: {payment_method: item.title}}">
 				<div id="baseSubPayment" class="col-12 card-frame">
 					<div class="payment-method-item">
-						<p>Uang Elektronik</p>
-						<div class="logo-payment-frame">
-							<img src="@/assets/images/icon/gopay-icon.png" class="logo-payment-menu" />
+						<p>{{item.title}}</p>
+						<div class="logo-payment-frame" v-for="image in item.logo">
+							<img :src="require(`@/assets/images/icon/${image}.png`)" class="logo-payment-menu" />
 						</div>
 					</div>
 					<div class="right-item-payment">
 						<span class="promo-menu">
-							<div class="promo-flag-first">
+							<div class="promo-flag-first" v-if="item.promo">
 								<span>Promo %</span>
 							</div>
 						</span>
@@ -41,7 +21,7 @@
 						</span>
 					</div>
 				</div>
-			</template>
-		</router-link>
+			</router-link>
+		</template>
 	</div>
 </div>

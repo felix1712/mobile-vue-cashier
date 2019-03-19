@@ -3,6 +3,7 @@
 	<slot></slot>
 	<small v-if="errorMessage" class="field-text-error">{{errorMessage}}</small>
 	<small v-if="infoInputMessage" v-show="!errorMessage" class="form-group-input-text">{{infoInputMessage}}</small>
+	<img src="@/assets/images/icon/all-gateway.png" class="all-gateway" v-if="imgGateway"/>
 
 	<BaseModal 
 		v-if="openedModal"

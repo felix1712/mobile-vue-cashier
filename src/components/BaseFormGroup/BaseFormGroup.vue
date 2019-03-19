@@ -31,6 +31,10 @@ export default {
 		infoInputMessage: {
 			required: false,
 		},
+    imgGateway: {
+      required: false,
+      default: false,
+    },
 	},
 
 	components: {
@@ -115,6 +119,12 @@ export default {
   &-input-text {
     font-size: 12px;
     color: #9e9c9c;
+  }
+
+  .all-gateway{
+    width: 100%;
+    height: auto;
+    max-width: 5.5rem;
   }
 }
 </style>

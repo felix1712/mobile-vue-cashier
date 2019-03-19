@@ -5,7 +5,9 @@
 			<div id="baseSubPayment" class="col-12 card-frame">
 				<div class="payment-method-item">
 					<p>Kartu Kredit & Debit</p>
-					<img src="@/assets/images/icon/all-gateway.png" />
+					<div class="logo-payment-frame" v-for="image in dummyImageCC">
+						<img :src="require(`@/assets/images/icon/${image}.png`)" class="logo-payment-menu" />
+					</div>
 				</div>
 				<div class="right-item-payment">
 					<span class="promo-menu">
@@ -24,7 +26,9 @@
 				<div id="baseSubPayment" class="col-12 card-frame">
 					<div class="payment-method-item">
 						<p>Uang Elektronik</p>
-						<img src="@/assets/images/icon/gopay-icon.png" />
+						<div class="logo-payment-frame">
+							<img src="@/assets/images/icon/gopay-icon.png" class="logo-payment-menu" />
+						</div>
 					</div>
 					<div class="right-item-payment">
 						<span class="promo-menu">

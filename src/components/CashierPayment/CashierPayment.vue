@@ -3,6 +3,11 @@
 <script>
 export default {
 	name: 'CashierPayment',
+	data() {
+		return {
+			dummyImageCC: ['mastercard-color', 'visa-color', 'jcb-color'],
+		}
+	}
 };
 </script>
 
@@ -34,11 +39,25 @@ export default {
 							font-weight: bold;
 							margin-bottom: 5px;
 						}
-						img{
-							width: 100%;
-							height: auto;
-							vertical-align: middle;
-							max-width: 3.5rem;
+						.logo-payment-frame{
+							width: 2.5rem;
+							height: 1.5rem;
+							margin: 0 5px;
+							padding: 0 5px;
+							display: inline-block;
+							text-align: center;
+							border: $border-normal;
+
+							&:first-of-type{
+								margin-left: 0;
+							}
+
+							img{
+								max-width: 100%;
+								max-height: 100%;
+								height: auto;
+								vertical-align: middle;
+							}
 						}
 					}
 

@@ -144,3 +144,45 @@ button:focus {
 		}
 	}
 }
+
+// promo flag
+
+.promo-flag-first {
+	position: relative;
+  border: 2px solid $v-red;
+  background: $v-white;
+  color: $v-red;
+  text-align: center;
+  display: inline-block;
+  padding: .1rem .5rem;
+  border-radius: 5px;
+
+  span{
+  	font-size: 80%;
+  	vertical-align: top;
+  }
+
+  &:before,
+  &:after{
+  	height:45px;
+    width:23px;
+    content: '';
+    position: absolute;
+    top: calc(0.4rem - 1px);
+    height: .5rem;
+    width: .4rem;
+    border: 2px solid $v-red;
+  }
+
+  &:before {
+    left: -2px;
+    border-radius: 0 1rem 1rem 0;
+    border-left-color: $v-white;
+  }
+
+  &:after {
+    right: -2px;
+    border-radius: 1rem 0 0 1rem;
+    border-right-color: $v-white;
+  }
+}

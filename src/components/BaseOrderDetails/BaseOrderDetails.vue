@@ -90,7 +90,6 @@ export default {
 	}
 	// responsive style
 	&.tiny{
-		font-size: 85%;
 		.order-detail-content{
 			div[class*="col-"]{
 				padding: 0 5px;

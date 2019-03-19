@@ -2,12 +2,13 @@
 <transition name="slide-right" mode="out-in">
   <div
     id="pageCashier"
+    class="row"
     v-responsive="{
-      tiny: el => el.width < 400,
-      small: el => el.width < 800 && el.width > 400,
+      tiny: el => el.width <= 320 ,
+      small: el => el.width < 800 && el.width > 320,
       large: el => el.width > 800,
     }"
-  >
+    >
     <div id="cashierHeader">
       <BaseCountDown/>
       <BaseOrderDetails/>
@@ -45,9 +46,7 @@ export default {
 
   // custom style for iphone 5
   &.tiny{
-  	#cashierHeader{
-  		// height: 35vh;
-	  }
+    font-size: 80%;
   }
 }
 	.slide-right-enter-active {

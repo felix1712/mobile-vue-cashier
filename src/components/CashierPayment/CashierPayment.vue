@@ -47,6 +47,10 @@ export default {
 						display: inline-block;
 						padding: 10px 0;
 
+						.promo-menu{
+							margin: 0 1rem;
+						}
+
 						.arrow-menu{
 							img{
 								width: 100%;
@@ -59,39 +63,4 @@ export default {
 				}
 			}
 		}
-
-#promoFlag {
-  padding: 5px 12px;
-  background: $v-red-linear;
-  color: $v-white;
-  font-weight: bold;
-  position: relative;
-  display: inline-block;
-  margin-right: 15px;
-  border-radius: 5px;
-
-  &:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute !important;
-    z-index: 100;
-    top: 8px;
-    left: -10px;
-    border: 7px solid #fff;
-    border-radius: 8px;
-  }
-
-  &:after {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute !important;
-    z-index: 100;
-    top: 8px;
-    right: -10px;
-    border: 7px solid #fff;
-    border-radius: 8px;
-  }
-}
 </style>

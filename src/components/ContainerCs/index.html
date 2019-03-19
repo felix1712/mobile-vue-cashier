@@ -1,0 +1,20 @@
+<div id="containerCs">
+	<div v-for="(item, index) in dummyCs">
+		<BaseCustomRadio :radioId="item.value" :radioName="'method_cs'" :radioLabel="item.name" :radioValue="item.value" :periodPrice="false" class="card-frame s-py-7 s-px-10" v-model="cs_choose">
+			<template v-slot:icon_payment>
+				<div class="logo-payment-frame s-float-r" v-for="image in item.logo">
+					<img :src="require(`@/assets/images/icon/${image}.png`)" class="logo-payment-menu" />
+				</div>
+			</template>
+			<template v-slot:form_payment v-if="cs_choose == item.value">
+				<BaseFormGroup 
+				:labelTitle="'Nomor Handphone / Email'"
+				:inputId="'holderName'"
+				:infoInputMessage="'Informasi Bank Transfer akan dikirimkan melalui Handphone dan Email Anda.'"
+				>
+					<input type="text" name="" class="s-form-control">
+				</BaseFormGroup>
+			</template>
+		</BaseCustomRadio>
+	</div>
+</div>

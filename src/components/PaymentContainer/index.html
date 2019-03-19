@@ -5,6 +5,7 @@
 		<ContainerCreditCard v-if="this.$route.params.payment_method == 'cc'" />
 		<ContainerVa v-if="this.$route.params.payment_method == 'va'" />
 		<ContainerBt v-if="this.$route.params.payment_method == 'bt'" />
+		<ContainerCs v-if="this.$route.params.payment_method == 'cs'" />
 	</div>
 <!-- 		<template v-for="(item, index) in 5">
 			<BaseCustomRadio :radioId="'uangElektronik'+index" :radioName="'method_uang_elektronik'" :radioLabel="'GO-PAY'" :radioValue="index" class="card-frame s-py-7">
